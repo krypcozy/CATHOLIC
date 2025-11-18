@@ -156,3 +156,8 @@ ul{
   width: 600x;
   height: 500;
 }
+
+img {
+display: block;
+margin: 0 auto;
+}
