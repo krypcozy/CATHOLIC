@@ -21,7 +21,7 @@ header {
   justify-content: space-between;
   align-items: center;
   background: linear-gradient(90deg, #0b1020, #111827, #151b2c);
-  padding: 15px 40px;
+  padding: 15px 20px;
   position: sticky;
   top: 0;
   z-index: 1000;
@@ -178,9 +178,20 @@ img{
  display: block;
  margin: 0 auto;
 }
+
 body {
   overflow-x: hidden;
 }
 *{
   max-width: 100%;
+}
+
+footer {
+  text-align: center;
+  background: #111827;
+  padding: 20px;
+  font-size: 14px;
+  color: #aaa;
+  border-top: 1px solid rgba(0, 240, 255, 0.18);
+  box-shadow: 0 -8px 24px rgba(0, 240, 255, 0.18);
 }
