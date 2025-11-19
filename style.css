@@ -178,3 +178,9 @@ img{
  display: block;
  margin: 0 auto;
 }
+body {
+  overflow-x: hidden;
+}
+.{
+  max-width: 100%;
+}
