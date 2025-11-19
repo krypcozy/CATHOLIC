@@ -1,163 +1,180 @@
-/* styles.css */
+/* Updated CSS with light effects & toggle from first code applied to second */
 
-/* --- General Resets & Body Styling --- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f4f4f4; /* Light background for the whole page */
+  font-family: Arial, sans-serif;
+  background:
+    radial-gradient(circle at 10% 0%, #1a2748 0%, transparent 55%),
+    radial-gradient(circle at 90% 100%, #2a1f4a 0%, transparent 55%),
+    #0a0f1c;
+  color: #e4e4e4;
+  line-height: 1.6;
 }
 
-/* --- Main Layout Container for Centering --- */
-/* This centers all the main content */
-.main-container {
-    max-width: 800px; /* Max width for a clean reading column */
-    margin: 0 auto; /* Center the container horizontally */
-    background-color: #fff; /* White background for the content area */
-    padding: 20px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-}
-
-/* --- Header and Navigation --- */
+/* HEADER */
 header {
-    background-color: #333;
-    color: white;
-    padding: 10px 0;
-    text-align: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(90deg, #0b1020, #111827, #151b2c);
+  padding: 15px 40px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  border-bottom: 1px solid rgba(0, 240, 255, 0.18);
+  box-shadow: 0 0 25px rgba(0, 240, 255, 0.12);
 }
 
+header .logo h1 {
+  color: #00f0ff;
+  font-size: 28px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  text-shadow: 0 0 8px rgba(0, 240, 255, 0.8), 
+               0 0 18px rgba(255, 0, 122, 0.6);
+}
+
+header .logo span {
+  color: #ff007a;
+}
+
+/* NAVIGATION */
 nav ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    justify-content: center;
+  display: flex;
+  list-style: none;
+  background: rgba(10, 15, 30, 0.7);
+  border-radius: 999px;
+  border: 1px solid rgba(0, 240, 255, 0.25);
+  box-shadow: 0 0 18px rgba(0, 240, 255, 0.18);
+  padding: 6px 10px;
+}
+
+nav ul li {
+  margin: 0 10px;
 }
 
 nav ul li a {
-    color: white;
-    text-decoration: none;
-    padding: 10px 15px;
-    display: block;
+  color: #f1f1f1;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 14px;
+  padding: 6px 10px;
+  border-radius: 999px;
+  transition: 0.3s;
 }
 
 nav ul li a:hover {
-    background-color: #555;
+  color: #0a0f1c;
+  background: linear-gradient(135deg, #00f0ff, #ff007a);
+  box-shadow: 0 0 16px rgba(0, 240, 255, 0.6);
 }
 
-/* --- Section Styling --- */
+nav ul li a.active {
+  color: #0a0f1c;
+  background: linear-gradient(135deg, #ff007a, #00f0ff);
+  box-shadow: 0 0 20px rgba(255, 0, 122, 0.8);
+}
+
+/* MOBILE MENU */
+.menu-toggle {
+  display: none;
+  font-size: 30px;
+  color: #00f0ff;
+  cursor: pointer;
+}
+
+/* SECTIONS */
 .section {
-    padding: 20px 0;
-    border-bottom: 1px solid #ccc;
+  padding: 60px 40px;
+  text-align: center;
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s, transform 0.8s;
 }
 
-.section h2, .section h3 {
-    text-align: center;
-    color: #444;
-    border-bottom: 2px solid #ccc;
-    padding-bottom: 10px;
-    margin-top: 20px;
+.section.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
-/* --- List & Text Formatting --- */
-ul {
-    list-style-type: none; /* Remove default bullets for main content lists */
-    padding: 0;
+.section h3 {
+  font-size: 32px;
+  margin-bottom: 20px;
+  color: #00f0ff;
 }
 
-li {
-    margin-bottom: 15px;
-    padding: 10px;
-    border: 1px solid #eee;
-    background-color: #f9f9f9;
+/* LIST ITEMS */
+.section ul li {
+  background: radial-gradient(circle at 0% 0%, rgba(255, 0, 122, 0.18), #1a2236);
+  border: 1px solid rgba(255, 0, 122, 0.35);
+  padding: 10px;
+  margin-bottom: 10px;
+  transition: 0.3s;
 }
 
-/* --- Specific Text Formatting from User Input --- */
-/* Interpreting '2o' as 20px for the font size */
-p {
-    line-height: 1.6;
+.section ul li:hover {
+  background: #00f0ff22;
+  transform: translateY(-3px);
+  box-shadow: 0 0 24px rgba(0, 240, 255, 0.35);
 }
 
-p[style*="font-size: 2o"], p[style*="font-size: 2opx"] {
-    font-size: 20px !important; /* Specific font size */
-    margin: 5px 0;
+/* IMAGE FIX */
+.section img {
+  border-radius: 12px;
+  border: 2px solid #00f0ff;
+  filter: drop-shadow(0 0 12px rgba(0, 240, 255, 0.6));
+  display: block;
+  margin: 20px auto;
+  max-width: 100%;
 }
 
-p[style*="color: red"], h3[style*="color: red"] {
-    color: red !important; /* Rubric text in red */
-    font-weight: bold;
-}
-
-h5 {
-    font-size: 22px;
-    color: #a00;
-    text-align: center;
-    margin: 10px 0;
-}
-
-/* --- Video Section Styling --- */
-.video-container {
-    text-align: center;
-    margin: 20px 0;
-}
-
-.video-container iframe {
-    max-width: 100%;
-}
-
-/* --- Calendar Styling (from Batch 3) --- */
-#calendar-container {
-    width: 100%; /* Make it responsive within the main-container */
-    max-width: 300px;
-    text-align: center;
-    margin: 20px auto;
-}
-
-.calendar-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 15px;
-}
-
-table {
-    width: 100%;
-    border-collapse: collapse;
-}
-
-th {
-    background: #eee;
-    padding: 5px;
-}
-
-td {
-    border: 1px solid #ccc;
-    padding: 8px;
-    height: 30px;
-}
-
-.today {
-    background: rgb(205, 3, 3);
-    color: white;
-    font-weight: bold;
-}
-
-.sunday {
-    color: red;
-}
-
-/* --- Footer --- */
-footer {
-    text-align: center;
+/* Responsive navigation */
+@media (max-width: 768px) {
+  nav ul {
+    position: absolute;
+    top: 60px;
+    right: 10px;
+    background: #111827;
+    width: 220px;
+    flex-direction: column;
     padding: 10px 0;
-    border-top: 1px solid #ccc;
-    margin-top: 20px;
-    color: #777;
+    display: none;
+    border-radius: 12px;
+  }
+
+  nav ul.open {
+    display: flex;
+  }
+
+  nav ul li {
+    margin: 8px 0;
+    text-align: center;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
 }
 
-/* --- Custom Symbols --- */
-.cross-symbol {
-    color: red;
-    font-weight: bolder;
-    font-size: 1.2em;
+/* GENERAL LIST RESET */
+ul {
+  list-style-type: none !important;
+  padding-left: 0 !important;
+  margin-left: 0 !important;
+}
+
+/* VIDEO + IMG FIXED */
+.video,
+.img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 600px;
+  height: 500px;
+  margin: 0 auto;
 }
