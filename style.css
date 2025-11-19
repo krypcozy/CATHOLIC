@@ -153,14 +153,14 @@ ul {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 600x;
+  width: 600;
   height: 500;
 }
 .img {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 600x;
+  width: 600;
   height: 500;
 }
 /* Fix for centering everything inside .section */
@@ -171,11 +171,7 @@ ul {
   transform: translateY(40px);
   transition: opacity 0.8s ease-out, transform 0.8s ease-out;
 
-  display: flex;              /* ❤ make section behave like a centered container */
-  flex-direction: column;     /* stack items vertically */
-  align-items: center;        /* ❤ center horizontally */
-  justify-content: center;    /* center vertically if needed */
-  text-align: center;
+ 
 }
 
 /* Fix image alignment */
@@ -187,21 +183,3 @@ ul {
   filter: drop-shadow(0 0 12px rgba(0, 240, 255, 0.6));
 }
 
-/* FULL FIX FOR VIDEO CONTAINER */
-.video {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  width: 600px;       /* FIXED: You wrote 600x (invalid) */
-  height: 500px;      /* FIXED: missing px unit */
-  margin: 0 auto;     /* ❤ centers the video box */
-}
-
-/* Make video element itself centered & responsive */
-video {
-  max-width: 100%;
-  height: auto;
-  display: block;
-  margin: 0 auto;
-}
