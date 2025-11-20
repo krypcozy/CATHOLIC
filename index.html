@@ -3022,19 +3022,22 @@ Faith is a journey. You don’t need to know everything to begin — you just ne
 
 “Seek and you will find.” – Jesus (Matthew 7:7)</p></li>
   </ul>
+  <div>
             <section id="calender" class="section calender">
               <h3>CATHOLIC LITURGICAL CALENDER</h3>
               <style>
     body { font-family: Arial, sans-serif; padding: 20px; }
 
     #calendar-container {
-      width: 300px;
+      max-width: 100%;
       text-align: center;
-      margin: auto;
+      margin: 0 auto;
+      display: block;
+      height: auto;
     }
 
     .calendar-header {
-      display: flex;
+      display: block;
       justify-content: space-between;
       align-items: center;
       margin-bottom: 15px;
@@ -3153,6 +3156,7 @@ document.getElementById("next").onclick = () => {
 
 renderCalendar();
 </script>
+
 <footer>
   <p>© 2025 COZY'S |WITH FAITH</p>
 </footer>
