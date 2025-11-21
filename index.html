@@ -17,7 +17,6 @@
                 <li><a href="#saints">SAINTS</a></li>
                 <li><a href="#mass">MASS</a></li>
                 <li><a href="#faith">FAITH</a></li>
-                <li><a href="#calender">CALENDER</a></li>
             </ul>
         </nav>
         
@@ -66,7 +65,7 @@ alt="CHAPEL">
     </div>
     <p>
       <H2>
-        The Saints were ordinary people who chose to   live in an extraordinary way by giving their lives fully to God. Some were young, some old, some rich, some poor but all of them remind us that holiness is possible for everyone. Here, you’ll meet them, hear their stories, and find encouragement to walk your own journey of faith with courage and hope.
+        The Saints were ordinary people who chose to live in an extraordinary way by giving their lives fully to God. <br> Some were young, some old, some rich, some poor but all of them remind us that holiness is possible for everyone. <br> Here, you’ll meet them, hear their stories, and find encouragement to walk your own journey of faith with courage and hope.
       </H2> <br>
       <h3><b>DETAILED AND UPDATED INFORMATION ABOUT ALL SAINTS</b></h3>
        <p> <h1>SAINT PADRE PIO</h1>
@@ -3022,144 +3021,7 @@ Faith is a journey. You don’t need to know everything to begin — you just ne
 
 “Seek and you will find.” – Jesus (Matthew 7:7)</p></li>
   </ul>
-  <div>
-            <section id="calender" class="section calender">
-              <h3>CATHOLIC LITURGICAL CALENDER</h3>
-              <style>
-    body { font-family: Arial, sans-serif; padding: 20px; }
-
-    #calendar-container {
-      max-width: 100%;
-      text-align: center;
-      margin: 0 auto;
-      display: block;
-      height: auto;
-    }
-
-    .calendar-header {
-      display: block;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 15px;
-    }
-
-    .calendar-header button {
-      padding: 5px 10px;
-    }
-
-    table {
-      width: 100%;
-      border-collapse: collapse;
-    }
-
-    th {
-      background: #eee;
-      padding: 5px;
-    }
-
-    td {
-      border: 1px solid #ccc;
-      padding: 8px;
-      height: 30px;
-    }
-
-    .today {
-      background: rgb(205, 3, 3);
-      font-weight: bold;
-    }
-
-    .sunday {
-      color: red;
-    }
-  </style>
-</head>
-<body>
-
-<div id="calendar-container">
-  <div class="calendar-header">
-    <button id="prev">Prev</button>
-    <h3 id="month-year"></h3>
-    <button id="next">Next</button>
-  </div>
-
-  <table id="calendar-table">
-    <thead>
-      <tr>
-        <th class="sunday">Sun</th>
-        <th>Mon</th>
-        <th>Tue</th>
-        <th>Wed</th>
-        <th>Thu</th>
-        <th>Fri</th>
-        <th>Sat</th>
-      </tr>
-    </thead>
-    <tbody id="calendar-body"></tbody>
-  </table>
-</div>
-
-<script>
-const monthNames = [
-  "January", "February", "March", "April", "May", "June",
-  "July", "August", "September", "October", "November", "December"
-];
-
-let current = new Date();
-
-function renderCalendar() {
-  const year = current.getFullYear();
-  const month = current.getMonth();
-  const firstDay = new Date(year, month, 1).getDay();
-  const daysInMonth = new Date(year, month + 1, 0).getDate();
-
-  document.getElementById("month-year").textContent =
-    monthNames[month] + " " + year;
-
-  const body = document.getElementById("calendar-body");
-  body.innerHTML = "";
-
-  let row = document.createElement("tr");
-  for (let i = 0; i < firstDay; i++) row.appendChild(document.createElement("td"));
-
-  for (let day = 1; day <= daysInMonth; day++) {
-    const cell = document.createElement("td");
-    cell.textContent = day;
-
-    let today = new Date();
-    if (
-      day === today.getDate() &&
-      month === today.getMonth() &&
-      year === today.getFullYear()
-    ) {
-      cell.classList.add("today");
-    }
-
-    row.appendChild(cell);
-
-    if ((day + firstDay) % 7 === 0) {
-      body.appendChild(row);
-      row = document.createElement("tr");
-    }
-  }
-
-  if (row.children.length > 0) body.appendChild(row);
-}
-
-document.getElementById("prev").onclick = () => {
-  current.setMonth(current.getMonth() - 1);
-  renderCalendar();
-};
-document.getElementById("next").onclick = () => {
-  current.setMonth(current.getMonth() + 1);
-  renderCalendar();
-};
-
-renderCalendar();
-</script>
-
-<footer>
-  © 2025 COZY'S |WITH FAITH
-</footer>
+  <footer><P> 2025 COZY| All right reserved</P></footer>
    <script src="scripts.js"></script>
   </body>
 </html>
